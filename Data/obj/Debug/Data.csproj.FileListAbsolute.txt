@@ -1,0 +1,12 @@
+E:\Projects\Playground\ContosoUniversity\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+E:\Projects\Playground\ContosoUniversity\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+E:\Projects\Playground\ContosoUniversity\Data\bin\Debug\ContosoUniversity.dll.config
+E:\Projects\Playground\ContosoUniversity\Data\bin\Debug\ContosoUniversity.dll
+E:\Projects\Playground\ContosoUniversity\Data\bin\Debug\ContosoUniversity.pdb
+E:\Projects\Playground\ContosoUniversity\Data\bin\Debug\EntityFramework.dll
+E:\Projects\Playground\ContosoUniversity\Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\Playground\ContosoUniversity\Data\bin\Debug\EntityFramework.xml
+E:\Projects\Playground\ContosoUniversity\Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\Playground\ContosoUniversity\Data\obj\Debug\Data.csproj.CopyComplete
+E:\Projects\Playground\ContosoUniversity\Data\obj\Debug\ContosoUniversity.dll
+E:\Projects\Playground\ContosoUniversity\Data\obj\Debug\ContosoUniversity.pdb
