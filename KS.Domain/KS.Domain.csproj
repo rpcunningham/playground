@@ -120,8 +120,6 @@
     <Compile Include="Entities\Setup.cs" />
     <Compile Include="Entities\Skillstree.cs" />
     <Compile Include="Entities\Student.cs" />
-    <Compile Include="Initlizer\ApplicationContext.cs" />
-    <Compile Include="Initlizer\SeedData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

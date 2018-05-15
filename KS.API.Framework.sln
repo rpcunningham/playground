@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.Web.UI", "KS.Web.UI\KS.Web.UI.csproj", "{DE730957-481A-4FE4-88B0-ACD0439FDD0B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.DataAccess", "KS.DataAccess\KS.DataAccess.csproj", "{0A6C5749-F7DC-467D-BBA6-832942C286AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.Domain", "KS.Domain\KS.Domain.csproj", "{62948C25-B5D0-4FD8-9473-FE71DA892C75}"
@@ -15,16 +13,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.Services", "KS.Services\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.Web.API", "KS.Web.API\KS.Web.API.csproj", "{D10EB463-F2B6-43BA-808A-4C594B4CDAFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.Migrations", "KS.Migrations\KS.Migrations.csproj", "{E0AC16F7-E520-4648-96BC-23C30FC772DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{42CD7B77-F590-4F17-94C2-9BA88C3049D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KS.Web.UI.React", "KS.Web.UI.React\KS.Web.UI.React.csproj", "{7DE51251-3777-4B11-9654-F56166F461F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KS.Web.UI.ReactRedux", "KS.Web.UI.ReactRedux\KS.Web.UI.ReactRedux.csproj", "{0236F7C8-1B09-40B6-8800-AAB34130455D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE730957-481A-4FE4-88B0-ACD0439FDD0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE730957-481A-4FE4-88B0-ACD0439FDD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE730957-481A-4FE4-88B0-ACD0439FDD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE730957-481A-4FE4-88B0-ACD0439FDD0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0A6C5749-F7DC-467D-BBA6-832942C286AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0A6C5749-F7DC-467D-BBA6-832942C286AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A6C5749-F7DC-467D-BBA6-832942C286AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +47,22 @@ Global
 		{D10EB463-F2B6-43BA-808A-4C594B4CDAFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D10EB463-F2B6-43BA-808A-4C594B4CDAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D10EB463-F2B6-43BA-808A-4C594B4CDAFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0AC16F7-E520-4648-96BC-23C30FC772DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0AC16F7-E520-4648-96BC-23C30FC772DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0AC16F7-E520-4648-96BC-23C30FC772DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0AC16F7-E520-4648-96BC-23C30FC772DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42CD7B77-F590-4F17-94C2-9BA88C3049D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42CD7B77-F590-4F17-94C2-9BA88C3049D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42CD7B77-F590-4F17-94C2-9BA88C3049D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42CD7B77-F590-4F17-94C2-9BA88C3049D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE51251-3777-4B11-9654-F56166F461F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE51251-3777-4B11-9654-F56166F461F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE51251-3777-4B11-9654-F56166F461F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE51251-3777-4B11-9654-F56166F461F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0236F7C8-1B09-40B6-8800-AAB34130455D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0236F7C8-1B09-40B6-8800-AAB34130455D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0236F7C8-1B09-40B6-8800-AAB34130455D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0236F7C8-1B09-40B6-8800-AAB34130455D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

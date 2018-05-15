@@ -41,9 +41,10 @@ namespace KS.Domain.Entities
         public string PrerequisitesCSV { get; set; }
 
         public string Skilltreenode { get; set; }
-        [StringLength(2)]
+        [StringLength(255)]
         public string Category { get; set; }
         public int Hearts { get; set; }
         public string Manifest { get; set; }
+        public string SomethingElse { get; set; }
     }
 }

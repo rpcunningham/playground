@@ -1,7 +1,7 @@
 ﻿using KS.DataAccess.Context;
 using KS.Domain.Entities;
 using KS.Services.Interface;
-using System.Data.Entity;
+using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
@@ -21,9 +21,15 @@ namespace KS.Web.API.Controllers
         }
 
         // GET: api/Menus
-        public IQueryable<Menu> GetMenus()
+        [ResponseType(typeof(IQueryable<Menu>))]
+        public IHttpActionResult GetMenus()
         {
-            return db.Entity;
+            IQueryable<Menu> menus = _service.GetMenus();
+            if (menus == null)
+            {
+                return NotFound();
+            }
+            return Ok(menus);
         }
 
         // GET: api/Menus/5
@@ -52,15 +58,13 @@ namespace KS.Web.API.Controllers
                 return BadRequest();
             }
 
-            db.Entry(menu).State = EntityState.Modified;
-
             try
             {
-                db.SaveChanges();
+                _service.PutMenu(id, menu);
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MenuExists(id))
+                if (!_service.MenuExists(id))
                 {
                     return NotFound();
                 }
@@ -81,41 +85,31 @@ namespace KS.Web.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            db.Entity.Add(menu);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = menu.ID }, menu);
+            
+            Menu menuReturn = _service.PostMenu(menu);
+            if (menuReturn == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return CreatedAtRoute("MenusController", new { id = menu.ID }, menu);
+            }            
         }
 
         // DELETE: api/Menus/5
         [ResponseType(typeof(Menu))]
         public IHttpActionResult DeleteMenu(int id)
         {
-            Menu menu = db.Entity.Find(id);
+            Menu menu = _service.DeleteMenu(id);
             if (menu == null)
             {
                 return NotFound();
             }
-
-            db.Entity.Remove(menu);
-            db.SaveChanges();
-
-            return Ok(menu);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
+            else
             {
-                db.Dispose();
+                return Ok(menu);
             }
-            base.Dispose(disposing);
-        }
-
-        private bool MenuExists(int id)
-        {
-            return db.Entity.Count(e => e.ID == id) > 0;
         }
     }
 }
