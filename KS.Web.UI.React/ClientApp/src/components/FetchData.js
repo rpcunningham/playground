@@ -5,7 +5,7 @@ export class FetchData extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { forecasts: [], loading: true };
+        this.state = { controlPoints: [], loading: true };
 
         fetch('http://localhost:57899/api/data/ApplicationControlPoints'
             , {
@@ -15,11 +15,11 @@ export class FetchData extends Component {
         })
             .then(response => response.json())
             .then(data => {
-                this.setState({ forecasts: data, loading: false });
+                this.setState({ controlPoints: data, loading: false });
             });
     }
 
-    static renderForecastsTable(forecasts) {
+    static renderForecastsTable(controlPoints) {
         return (
             <table className='table'>
                 <thead>
@@ -29,9 +29,9 @@ export class FetchData extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {forecasts.map(forecast =>
-                        <tr key={forecast.Name}>
-                            <td>{forecast.Description}</td>
+                    {controlPoints.map(controlPoints =>
+                        <tr key={controlPoints.Name}>
+                            <td>{controlPoints.Description}</td>
                         </tr>
                     )}
                 </tbody>
@@ -42,11 +42,11 @@ export class FetchData extends Component {
     render() {
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
-            : FetchData.renderForecastsTable(this.state.forecasts);
+            : FetchData.renderForecastsTable(this.state.controlPoints);
 
         return (
             <div>
-                <h1>Weather forecast</h1>
+                <h1>Control Points</h1>
                 <p>This component demonstrates fetching data from the server.</p>
                 {contents}
             </div>
