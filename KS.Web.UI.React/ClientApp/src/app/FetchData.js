@@ -6,8 +6,9 @@ export class FetchData extends Component {
     constructor(props) {
         super(props);
         this.state = { controlPoints: [], loading: true };
+        
 
-        fetch('http://localhost:57899/api/data/ApplicationControlPoints'
+        fetch(`${process.env.REACT_APP_CIB_API_ROOT_URL}/api/data/ApplicationControlPoints`
             , {
             method: 'GET'
             //,headers: {'Accept': 'application/json','Content-Type': 'application/json',}

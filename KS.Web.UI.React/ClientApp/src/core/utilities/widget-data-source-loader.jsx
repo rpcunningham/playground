@@ -3,14 +3,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { toODataString } from '@progress/kendo-data-query';
 
-export class ProductsLoader extends React.Component {
-    baseUrl = 'http://localhost:57899/api/DynamicData?%24format=json&DataSourceId=21b89eae-e838-e811-8209-2c56dc964f5f&%24top=25&%24orderby=TradeDate+desc&%24count=true';
+export class WidgetDataSourceLoader extends React.Component {
+    DataSourceId = this.props.dataSourceId;
+    baseUrl =`${process.env.REACT_APP_CIB_API_ROOT_URL}/api/DynamicData?%24format=json&DataSourceId=${this.DataSourceId}&%24count=true&`;
     init = {
         method: 'GET', accept: 'application/json', headers: {} };
 
+    Top = 25;
+    OrderBy = "TradeDate";
+    Order = "desc";
     lastSuccess = '';
     pending = '';
 
+        
     requestDataIfNeeded = () => {
         if (this.pending || toODataString(this.props.dataState) === this.lastSuccess) {
             return;
@@ -22,7 +27,7 @@ export class ProductsLoader extends React.Component {
                 this.lastSuccess = this.pending;
                 this.pending = '';
                 if (toODataString(this.props.dataState) === this.lastSuccess) {
-                    this.props.onDataRecieved.call(undefined, {
+                    this.props.onDataReceived.call(undefined, {
                         data: json.Items,
                         total: json['@odata.count']
                     });
@@ -42,10 +47,10 @@ export class ProductsLoader extends React.Component {
 class LoadingPanel extends React.Component {
     render() {
         const loadingPanel = (
-            <div class="k-loading-mask">
-                <span class="k-loading-text">Loading</span>
-                <div class="k-loading-image"></div>
-                <div class="k-loading-color"></div>
+            <div className="k-loading-mask">
+                <span className="k-loading-text">Loading</span>
+                <div className="k-loading-image"></div>
+                <div className="k-loading-color"></div>
             </div>
         );
 

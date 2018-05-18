@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { Glyphicon, Nav, Navbar, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import './NavMenu.css';
+import '../content/styles/NavMenu.css';
     
 export class NavMenu extends Component {
     displayName = NavMenu.name
@@ -31,9 +31,9 @@ export class NavMenu extends Component {
                             <NavItem>
                                 <Glyphicon glyph='th-list' /> Fetch data</NavItem>
                         </LinkContainer>
-                        <LinkContainer to={'/kendo'}>
+                        <LinkContainer to={'/biggrid'}>
                             <NavItem>
-                                <Glyphicon glyph='th-list' /> kendo</NavItem>
+                                <Glyphicon glyph='th-list' /> Big Grid</NavItem>
                         </LinkContainer>
                         <NavItem className="nav-link" href="http://localhost:57899/#/profile"><Glyphicon glyph='th-list' /> Fixed Income Blotter</NavItem>
                     </Nav>
