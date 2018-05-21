@@ -9,11 +9,14 @@ export class Layout extends Component {
     return (
       <Grid fluid>
         <Row>
-          <Col sm={12}>
-            <NavMenu />
+          <Col className="navbar-full" sm={12}>
+              <NavMenu />
           </Col>
-          <Col sm={12}>
-            {this.props.children}
+          <Col className="app-main-body" sm={12}>
+              {this.props.children}
+          </Col>
+          
+          <Col className="footer" sm={12}>
           </Col>
         </Row>
       </Grid>

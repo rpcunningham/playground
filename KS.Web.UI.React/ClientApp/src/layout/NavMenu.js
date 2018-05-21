@@ -11,31 +11,23 @@ export class NavMenu extends Component {
     render() {
         return (
             <Navbar fluid collapseOnSelect>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        <Link to={'/'}>CWB React</Link>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                </Navbar.Header>
                 <Navbar.Collapse>
+                    <div className="app-name-top">CIB</div>
+                    <div className="app-name-bottom">DESKTOP</div>
                     <Nav bsStyle="pills" activeKey={1} >
                         <LinkContainer to={'/'} exact>
-                            <NavItem>
-                                <Glyphicon glyph='home' /> Home</NavItem>
+                            <NavItem>Home</NavItem>
                         </LinkContainer>
                         <LinkContainer to={'/counter'}>
-                            <NavItem>
-                                <Glyphicon glyph='education' /> Counter</NavItem>
+                            <NavItem>Counter</NavItem>
                         </LinkContainer>
                         <LinkContainer to={'/fetchdata'}>
-                            <NavItem>
-                                <Glyphicon glyph='th-list' /> Fetch data</NavItem>
+                            <NavItem>Fetch data</NavItem>
                         </LinkContainer>
                         <LinkContainer to={'/biggrid'}>
-                            <NavItem>
-                                <Glyphicon glyph='th-list' /> Big Grid</NavItem>
+                            <NavItem>Big Grid</NavItem>
                         </LinkContainer>
-                        <NavItem className="nav-link" href="http://localhost:57899/#/profile"><Glyphicon glyph='th-list' /> Fixed Income Blotter</NavItem>
+                        <NavItem className="nav-link" href="http://localhost:57899/#/profile">Profile</NavItem>
                     </Nav>
                 </Navbar.Collapse>    
             </Navbar>
