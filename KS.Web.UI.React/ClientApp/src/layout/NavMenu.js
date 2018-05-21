@@ -10,15 +10,15 @@ export class NavMenu extends Component {
 
     render() {
         return (
-            <Navbar inverse fixedTop fluid collapseOnSelect>
+            <Navbar fluid collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <Link to={'/'}>KS.Web.UI.React</Link>
+                        <Link to={'/'}>CWB React</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
-                    <Nav bsStyle="pills" stacked activeKey={1} >
+                    <Nav bsStyle="pills" activeKey={1} >
                         <LinkContainer to={'/'} exact>
                             <NavItem>
                                 <Glyphicon glyph='home' /> Home</NavItem>
