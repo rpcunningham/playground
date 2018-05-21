@@ -1,9 +1,9 @@
 import React from 'react';
-import '../../content/styles/all.css';
+import '../../../content/styles/all.css';
 
 import { Grid, GridColumn as Column } from '@progress/kendo-react-grid';
-import { WidgetDataSourceLoader } from '../utilities/widget-data-source-loader';
-import fetchBreezeData from '../utilities/fetchBreezeData';
+import { WidgetDataSourceLoader } from '../../utilities/widget-data-source-loader';
+import fetchBreezeData from '../../utilities/fetchBreezeData';
 
 export class KendoGrid extends React.Component {
     constructor(props) {
