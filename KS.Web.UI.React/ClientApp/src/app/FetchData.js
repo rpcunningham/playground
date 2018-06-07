@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import fetchBreezeData from '../core/utilities/fetchBreezeData';
 
 export class FetchData extends Component {
     displayName = FetchData.name
@@ -7,17 +8,13 @@ export class FetchData extends Component {
         super(props);
         this.state = { controlPoints: [], loading: true };
         
-
-        fetch(`${process.env.REACT_APP_CIB_API_ROOT_URL}/api/data/ApplicationControlPoints`
-            , {
-            method: 'GET'
-            //,headers: {'Accept': 'application/json','Content-Type': 'application/json',}
-            //,body: JSON.stringify({firstParam: 'yourValue',secondParam: 'yourOtherValue',})
-        })
-            .then(response => response.json())
-            .then(data => {
-                this.setState({ controlPoints: data, loading: false });
-            });
+        fetchBreezeData('ApplicationControlPoints').then(
+            response => { 
+                if (response && response.length > 0) {
+                    this.setState({ controlPoints: response, loading: false });
+                }
+            }
+        );
     }
 
     static renderForecastsTable(controlPoints) {
@@ -32,6 +29,7 @@ export class FetchData extends Component {
                 <tbody>
                     {controlPoints.map(controlPoints =>
                         <tr key={controlPoints.Name}>
+                            <td>{controlPoints.Name}</td>
                             <td>{controlPoints.Description}</td>
                         </tr>
                     )}

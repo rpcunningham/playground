@@ -4,10 +4,16 @@ import ReactDOM from 'react-dom';
 import { toODataString } from '@progress/kendo-data-query';
 
 export class WidgetDataSourceLoader extends React.Component {
+    token = sessionStorage.getItem('cibToken');
     DataSourceId = this.props.dataSourceId;
     baseUrl =`${process.env.REACT_APP_CIB_API_ROOT_URL}/api/DynamicData?%24format=json&DataSourceId=${this.DataSourceId}&%24count=true&`;
     init = {
-        method: 'GET', accept: 'application/json', headers: {} };
+        method: 'GET',
+        accept: 'application/json',
+        headers: {
+            'Authorization': `Bearer ${this.token}`
+        }
+    };
 
     Top = 25;
     OrderBy = "TradeDate";

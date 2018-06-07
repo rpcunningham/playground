@@ -80,8 +80,7 @@ export class KendoGrid extends React.Component {
 
     render() {
         let contents = this.state.loading ? <p><em>Loading...</em></p> : this.getColumns();
-        
-        
+              
         
             return (
                 <div>

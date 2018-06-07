@@ -1,9 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-export default function FetchBreezeData(dataType,filterId,filterField){
+export default function FetchBreezeData(dataType, filterId, filterField) {
+    const token = sessionStorage.getItem('cibToken');
     return fetch(`${process.env.REACT_APP_CIB_API_ROOT_URL}/api/data/${dataType}`,
-        { method: 'GET' })
+        { method: 'GET'
+        ,mode: 'cors'
+        ,headers: {
+            'Authorization': `Bearer ${token}`, 
+            }
+        })
         .then(response => {
             return response.json();
         })
